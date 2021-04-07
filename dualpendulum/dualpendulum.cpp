@@ -2,10 +2,8 @@
 
 DualPendulum::DualPendulum() {
   Gravity << 0, 0, -9.8;
-}
-
-void DualPendulum::setPos(Eigen::RowVector2f p) {
-  pos = p;
+//  pos.
+  pos << M_PI_4, M_PI_4;
 }
 
 DualPendulum::~DualPendulum() {

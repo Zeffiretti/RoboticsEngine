@@ -42,7 +42,7 @@ if (ANDROID)
     mainwindow.ui
     )
 else ()
-  add_executable(RoboticsEngine WIN32
+  add_executable(RoboticsEngine
     main.cpp
     mainwindow.cpp
     mainwindow.h
