@@ -34,20 +34,13 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/lib/Eigen3)
 #find_package(Eigen3 REQUIRED)
 
-if (ANDROID)
-  add_library(RoboticsEngine SHARED
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    )
-else ()
-  add_executable(RoboticsEngine
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    "dualpendulum/dualpendulum.cpp")
-endif ()
+add_executable(RoboticsEngine
+  dualpendulum/dualcontroller.cpp
+  dualpendulum/dualpendulum.cpp
+  dualpendulum/kinematics.cpp
+  main.cpp
+  mainwindow.cpp
+  mainwindow.h
+  mainwindow.ui dualpendulum/dualdynamics.cpp)
 
 target_link_libraries(RoboticsEngine PRIVATE Qt5::Widgets)
